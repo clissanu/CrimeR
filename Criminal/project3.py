@@ -42,14 +42,12 @@ dataTest['c_charge_degree'] = encoderT.fit_transform(dataTest['c_charge_degree']
 
 
 label = data.iloc[:,-1]  #saves the last column whihch is the 0,1
-# print(label) #has 5049 rows
 #remove not needed columns and isn't numerical
 data = data.drop(columns=['c_charge_desc','label'])
-afTr = data.loc[data['race']==0]  #saves all the black(0) data
-# print(afTr) #has 2850 rows
+afTr = data.loc[data['race']==0]
 white = data.loc[data['race']==1]
 whiteLabel = label.iloc[:1733]
-AfTLabel = label.iloc[:2580] #adjust rows to 5049 -> 2850
+AfTLabel = label.iloc[:2580]
 #data = data.drop(columns=['race','c_charge_desc','label'])
 dataTest = dataTest.drop(columns=['c_charge_desc'])
 #dataTest = dataTest.drop(columns=['race','c_charge_desc'])
